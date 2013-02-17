@@ -2,7 +2,7 @@ module Haml
   module Filters
     # This is an extension of Sass::Rails's SassTemplate class that allows
     # Rails's asset helpers to be used inside Haml Sass filter.
-    class SassRailsTemplate < ::Sass::Rails::SassTemplate
+    class SassRailsTemplate < ::Sprockets::SassTemplate
       def render(scope=Object.new, locals={}, &block)
         scope = ::Rails.application.assets.context_class.new(::Rails.application.assets, "/", "/")
         super
